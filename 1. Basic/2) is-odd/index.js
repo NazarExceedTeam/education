@@ -1,5 +1,5 @@
 function isOdd(a) {
-  return(a%2==0);
+  return a % 2 === 0;
 }
 
 window.isOdd = isOdd;

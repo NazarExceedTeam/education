@@ -1,9 +1,9 @@
 function factorial(n) {
-  let i=1, r=1;
-  for(i=1;i<=n;i++){
-      r=r*i;
+  let result=1;
+  for(let i=1;i<=n;i++){
+      result=result*i;
   }
-  return (r);
+  return (result);
 }
 
 window.factorial = factorial;
