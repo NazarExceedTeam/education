@@ -1,5 +1,8 @@
 function isEqual(a, b) {
-  // Напиши свой код здесь
+
+
+
+    return JSON.stringify(a) == JSON.stringify(b);
 }
 
 window.isEqual = isEqual;
