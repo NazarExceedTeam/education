@@ -1,16 +1,10 @@
 function findPair(arr) {
-    let check_arr = [];
-    for (let i = 0; i < arr.length; i++){
-        if (check_arr.length === 0){
-            check_arr.push(arr[i]);
-            continue;
-        } else {
-            for (let j = 0; j < check_arr.length; j++){
-                if (arr[i] === check_arr[j]){
-                    return arr[i];
-                }
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length; j++) {
+            if ((arr[i] === arr[j]) && (i!==j)) {
+                return arr[i];
             }
-            check_arr.push(arr[i]);
         }
     }
     return null;
