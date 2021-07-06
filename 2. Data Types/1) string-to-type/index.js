@@ -1,22 +1,19 @@
 function stringToType(str) {
-    let result = str;
-    if (result === "undefined"){
-        return undefined;
-    } else if (result === "null"){
-        return null;
-    } else if(result === "") {
-        return "";
-    } else if(result === "false") {
-        return false;
-    } else if(result === "true") {
-        return true;
-    } else {
-        if (parseInt(result, 10)==result) {
-            return parseInt(result, 10);
-        } else {
-            return result;
-        }
+
+    switch (str){
+        case "undefined": return undefined;
+        case "null": return null;
+        case "": return "";
+        case "true": return true;
+        case "false": return false;
+        default:
+            if (parseInt(str, 10)==str) {
+                return parseInt(str, 10);
+            } else {
+                return str;
+            }
     }
+
 };
 
 window.stringToType = stringToType;
