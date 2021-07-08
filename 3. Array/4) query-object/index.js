@@ -1,25 +1,43 @@
+// import queryToObject from '2. Data Types/1) string-to-type';
+
 function queryToObject(query) {
-    console.log(query.split('&').split('&'))
-    let str=query;
-    if (str.isArray()){
-        console.log("is array - true");
-        let obj='';
-        for(let i = 0; i < str.length; i++){
-            console.log("inside for, i="+i);
-            switch (str[i]) {
-                case '?': continue;
-                case '&': obj=+', '; continue;
-                case '=': obj=+': '; continue;
-                default: switch (str[i]){
-                    case (!Number.isNaN(str[i]) && (str[i + 1] === ',') || (str[i-1] === ':')): obj=+str[i];
-                    default: obj=+str[i];
-                }
-            }
+    let result = {};
+    if (query === "" || query === "?"){
+       return result;
+    }
+    query.split('&').forEach(function(sting) {
+        let sub_arr = sting.split('=');
+        if (sub_arr[0].charAt(0) === '?'){
+            sub_arr[0] = sub_arr[0].slice(1);
         }
-        console.log('{' + obj + '}');
+        result[sub_arr[0]] = stringToType(sub_arr[1])
+    });
+
+    return result;
+};
+
+function stringToType(str) {
+
+    switch (str){
+        case "undefined":
+            return undefined;
+        case "null":
+            return null;
+        case "":
+            return "";
+        case "true":
+            return true;
+        case "false":
+            return false;
+        default:
+            const num = Number(str);
+            if (!isNaN(num)) {
+                return num;
+            } else {
+                return str;
+            }
     }
 
-    return stringToType(str);
 };
 
 window.queryToObject = queryToObject;
