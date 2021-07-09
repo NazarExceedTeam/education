@@ -1,5 +1,5 @@
 function asyncSum(a, b) {
-    let prom = new Promise(function (resolve, reject) {
+    let prom = new Promise((resolve, reject) => {
 
         let bool = (Number.isInteger(a) || isNaN(a)) && Number.isInteger(b);
         console.log(`${a} and ${b} isNaN = ${bool}`);
