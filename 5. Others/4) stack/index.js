@@ -1,7 +1,7 @@
 /*
   Задача
   Написать стак стек в котором есть следующие методы
-  push - добавляет элимент в конец стека
+  push - добавляет элемент в конец стека
   pop - возвращяет удаляет последний элемент из стека, если стек уже пустой генерирует ошибку с ссобщением: "Stack is empty!"
   isEmpty - проверяет является ли стек пустым
   print - выводит стек в формате
@@ -18,7 +18,27 @@
  */
 
 class Stack {
-  // Напиши свой код здесь
+    arr = new Array();
+
+    push (val){
+        this.arr.push(val);
+    }
+    pop (n){
+        if (this.arr.length > 0){
+            this.arr.pop(n);
+        } else {
+            return Error("Stack is empty!");
+        }
+    }
+    print(){
+        return this.arr;
+    }
+    size(){
+        this.arr.length;
+    }
+    isEmpty(){
+        return Boolean(this.arr.length);
+    }
 }
 
 window.Stack = Stack;

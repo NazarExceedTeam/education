@@ -9,7 +9,11 @@
  */
 
 function baseExpect(a) {
-  // Напиши свой код здесь
+    this.toBe()
+    {
+        return a === b;
+        this.not = a !== b;
+    }
 }
 
 window.baseExpect = baseExpect;
