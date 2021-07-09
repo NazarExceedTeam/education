@@ -13,7 +13,9 @@
  */
 
 function isValidEmail(email) {
-  // Напиши свой код здесь
+    let arr = email.split('');
+    let index_a = arr.indexOf("@");
+    return (index_a !== -1) && (arr.indexOf('.', index_a) !== -1);
 }
 
 window.isValidEmail = isValidEmail;
