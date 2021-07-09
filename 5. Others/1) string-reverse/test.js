@@ -1,6 +1,6 @@
 import './index';
 
-describe('string-reverse', () => {
+describe('stringReverse', () => {
   test('should ne function', () => {
     expect(typeof 'test'.reverse).toBe('function');
   });
