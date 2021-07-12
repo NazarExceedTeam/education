@@ -6,7 +6,7 @@
   isEmpty - проверяет является ли стек пустым
   print - выводит стек в формате
   И имеет свойство:
-  size - количество элиментов в списке
+  size - количество элементов в списке
   Пример кода
   const stack = new Stack();
   stack.push(1);
@@ -18,26 +18,27 @@
  */
 
 class Stack {
-    arr = new Array();
-
+    arr = [];
+    size = 0;
     push (val){
         this.arr.push(val);
+        this.size++;
+        return this
     }
-    pop (n){
+    pop (){
         if (this.arr.length > 0){
-            this.arr.pop(n);
+            this.arr.pop();
+            this.size--;
         } else {
-            return Error("Stack is empty!");
+            throw ("Stack is empty!");
         }
+        return this;
     }
     print(){
-        return this.arr;
-    }
-    size(){
-        this.arr.length;
+        return "[" + this.arr.join(", ") + "]";
     }
     isEmpty(){
-        return Boolean(this.arr.length);
+        return Boolean(this.size === 0);
     }
 }
 
