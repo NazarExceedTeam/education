@@ -8,11 +8,14 @@
   Примечание: Должно работать только с числами
  */
 
+
+
+
 function baseExpect(a) {
-    this.toBe()
-    {
-        return a === b;
-        this.not = a !== b;
+    const toBe = (b) => {return a === b}
+    toBe.not = (b) => {return a !== b}
+    return {
+        toBe: toBe
     }
 }
 
