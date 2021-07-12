@@ -8,9 +8,6 @@
   Примечание: Должно работать только с числами
  */
 
-
-
-
 function baseExpect(a) {
     const toBe = (b) => {return a === b}
     toBe.not = (b) => {return a !== b}
