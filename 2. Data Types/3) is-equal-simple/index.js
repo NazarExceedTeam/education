@@ -33,15 +33,6 @@ function isEqual(a, b) {
 
         }
     }
-
-
-    //Object.is(a ,b);
-    //JSON.stringify(a) == JSON.stringify(b);
-    // return true;
-    // return Object.is(a ,b);
-
-
-
 }
 
 export default isEqual;
