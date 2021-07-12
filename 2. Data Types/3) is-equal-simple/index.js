@@ -1,5 +1,3 @@
-window.isEqual = isEqual;
-
 function isEqual(a, b) {
     if (a === b){
         return true;
@@ -25,10 +23,7 @@ function isEqual(a, b) {
             }
         }
     }
-
     return JSON.stringify(a) == JSON.stringify(b);
 }
-
 window.isEqual = isEqual;
-
 export default isEqual;
